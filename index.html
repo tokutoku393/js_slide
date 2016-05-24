@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>mlkcca | 行き当たりばったり</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+        <link href="css/impress-demo.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+    </head>
+
+    <body class="impress-not-supported">
+
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        </div>
+
+
+        <div id="impress">
+
+            <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+                <q style="text-align: center">行き当たりばったり！</q><br />
+                <q style="text-align: center">Milkcocoa Trial</q><br />
+                <img src="./image/cheer.jpeg" width="50%" height="50%">
+            </div>
+
+            <div class="step slide" data-x="0" data-y="-1500">
+                <q style="text-align: center">Milkcocoaでスライドリモコンつくる</q>
+                <br />
+                <p style="text-align: center;">
+                    <img src="./image/pokopoko.png" width="50%" height="50%">
+                </p>
+            </div>
+
+            <div class="step slide" data-x="1000" data-y="-1500">
+                <q style="text-align: center">もう書くことがありません</q><br />
+                <br />
+                <br />
+                <br />
+                <img src="./image/death.jpg" width="50%" height="50%" style="float: right">
+            </div>
+
+            <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+                <span class="try">全ページめくれた</span>
+                <h1>大成功＊</h1>
+                <span class="footnote">やったね！</span>
+            </div>
+
+        </div>
+
+        <div class="hint">
+            <p>milkcocoa girls #HiveShibuya</p>
+        </div>
+
+
+        <script>
+            if ("ontouchstart" in document.documentElement) {
+                document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+            }
+        </script>
+
+        <script src="js/impress.js"></script>
+        <script>impress().init();</script>
+        <script type="text/javascript">
+            $(function() {
+                var milkcocoa = new MilkCocoa('APP_ID.mlkcca.com');
+                var ds = milkcocoa.dataStore('steps');
+
+                ds.on('send', slideAction);
+
+                function slideAction(sent) {
+                    if (sent.value.mode === 'next') {
+                        impress().next();
+                    }
+                    if (sent.value.mode === 'prev') {
+                        impress().prev();
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
+
+

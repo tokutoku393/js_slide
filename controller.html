@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mlkcca | 行き当たりばったり</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body>
+<button id="prev">前へ</button>
+<button id="next">次へ</button>
+<script type="text/javascript">
+  $(function() {
+    var milkcocoa = new MilkCocoa('APP_ID.mlkcca.com');
+    var ds = milkcocoa.dataStore('steps');
+    var step = '';
+    $('#next').click(function() {
+      step = 'next';
+      ds.send({mode: step});
+    });
+    $('#prev').click(function() {
+      step = 'prev';
+      ds.send({mode: step});
+    });
+  });
+</script>
+</body>
+</html>
