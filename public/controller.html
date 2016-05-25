@@ -6,26 +6,26 @@
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
 
-  <link rel="shortcut icon" href="favicon.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="shortcut icon" href="image/favicon.png" />
+  <link rel="apple-touch-icon" href="image/apple-touch-icon.png" />
 </head>
 <body>
-<button id="prev">前へ</button>
-<button id="next">次へ</button>
-<script type="text/javascript">
-  $(function() {
-    var milkcocoa = new MilkCocoa('postiol1t40n.mlkcca.com');
-    var ds = milkcocoa.dataStore('steps');
-    var step = '';
-    $('#next').click(function() {
-      step = 'next';
-      ds.send({mode: step});
+  <button id="prev">前へ</button>
+  <button id="next">次へ</button>
+  <script type="text/javascript">
+    $(function() {
+      var milkcocoa = new MilkCocoa('postiol1t40n.mlkcca.com');
+      var ds = milkcocoa.dataStore('steps');
+      var step = '';
+      $('#next').click(function() {
+        step = 'next';
+        ds.send({mode: step});
+      });
+      $('#prev').click(function() {
+        step = 'prev';
+        ds.send({mode: step});
+      });
     });
-    $('#prev').click(function() {
-      step = 'prev';
-      ds.send({mode: step});
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
